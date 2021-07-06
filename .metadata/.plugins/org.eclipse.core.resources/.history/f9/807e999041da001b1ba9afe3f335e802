@@ -1,0 +1,26 @@
+package com.example.demo.service;
+
+import com.example.demo.model.Employee;
+import com.example.demo.repository.Employee_Repository;
+
+
+
+public class Employee_service {
+	private Employee_Repository repo;
+    
+    public List<Employee> listAll() {
+        return repo.findAll();
+    }
+     
+    public void save(Employee employee) {
+        repo.save(employee);
+    }
+     
+    public Employee get(Integer id) {
+        return repo.findById(id).get();
+    }
+     
+    public void delete(Integer id) {
+        repo.deleteById(id);
+    }
+}
